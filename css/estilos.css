@@ -1,0 +1,95 @@
+:root{
+    --background: #F2F2F2;
+    --emphasis-color-1: #8B65BF;
+    --emphasis-color-2: #BFADD9;
+    --emphasis-color-3: #8C8C8C;
+    --font-color-1:  #262626;
+}
+
+
+body{
+    background-color: var(--background);
+    color: var(--font-color-1);
+    font-size: 20px;
+}
+
+h1{
+    color: var(--emphasis-color-1);
+    font-size: 50px;
+    text-align: center;
+}
+
+h2{
+    color: var(--emphasis-color-2);
+}
+
+h3{
+    color: var(--emphasis-color-3);
+}
+
+p{
+    margin: 15px;
+    width: 80%;
+    display: inline-block;
+}
+
+a{
+    color: var(--emphasis-color-1);
+    font-size: 16px;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: var(--emphasis-color-2);
+}
+
+.titulo{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.meuLinkDestacadoMussum{
+    font-size: 25px;
+}
+
+.containerRoxo{
+    width: 600px;
+    height: 350px;
+    background-color: var(--emphasis-color-1);
+    border: #262626 solid 3px;
+    border-radius: 10px;
+    margin: 10px;
+    padding: auto;
+}
+
+ul li{
+    color: var(--emphasis-color-2);
+}
+
+.conteinerLista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.lista{
+    width: 200px;
+    background-color: var(--emphasis-color-3);
+    border-left: var(--font-color-1) solid 3px;
+    border-right: var(--font-color-1) solid 3px;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img{
+    display: block;
+    width: 25%;
+    padding: 15px;
+    margin: 0px 10px 10px 0;
+}
