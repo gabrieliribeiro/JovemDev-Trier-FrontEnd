@@ -1,3 +1,140 @@
-:root{
-    --cor001: #fff;
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --fonte-principal: "Quicksand", sans-serif;
+  --cor001: #fff;
+  --cor002: #dceef2;
+  --cor003: #d9d9d9;
+  --cor004: #274b59;
+  --cor005: #467f8c;
+  --cor006: #a9cbd9;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  background-color: var(--cor002);
+}
+
+header {
+  background-image: linear-gradient(to bottom, var(--cor004), var(--cor005));
+  min-height: 150px;
+  text-align: center;
+  padding-top: 40px;
+  padding: 10px;
+  text-align: center;
+}
+header > h1 {
+  font-family: var(--fonte-principal);
+  color: var(--cor002);
+  font-weight: 700;
+  font-size: 56px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.473);
+}
+header > p {
+  font-family: var(--fonte-principal);
+  color: var(--cor002);
+  font-weight: normal;
+  font-size: 25px;
+  max-width: 600px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  padding-bottom: 20px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.26);
+}
+
+.container {
+  text-align: center;
+  background-color: var(--cor006);
+  width: 1045px;
+  height: 700px;
+  border-radius: 10px;
+  padding: 40px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.308);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.container label[for="name"],
+.container label[for="sexo"],
+.container label[for="peso"],
+.container label[for="altura"] {
+  color: #fff;
+  font-size: 26px;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+
+.container label[for="sexo"] {
+  width: 5px;
+  text-align: right;
+  margin-right: 215px;
+}
+
+.container input[type="text"],
+.container input[type="number"],
+.container input[type="radio"] {
+  width: 475px; /* Reduzindo a largura dos inputs para que fiquem à direita dos labels */
+  height: 35px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--cor002);
+  border-radius: 10px;
+  font-size: 16px; 
+}
+
+.container input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--cor002);
+  margin-right: 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.container input[type="radio"]:checked {
+  background-color: var(--cor004);
+}
+
+.container button {
+  width: 250px;
+  height: 75px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--cor005);
+  cursor: pointer;
+  color: #fff;
+  font-size: 30px;
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  vertical-align: middle;
 }

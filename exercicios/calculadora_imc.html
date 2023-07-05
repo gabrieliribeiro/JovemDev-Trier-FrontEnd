@@ -41,6 +41,10 @@
     #resultado {
       font-weight: bold;
       text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
   </style>
 </head>
@@ -48,10 +52,8 @@
   <div class="container">
     <h1>Calculadora de IMC</h1>
     <label for="sexo">Sexo:</label>
-    <select id="sexo">
-      <option value="masculino">Masculino</option>
-      <option value="feminino">Feminino</option>
-    </select>
+    <input type="radio" name="sexo" value="masculino" checked> Masculino
+    <input type="radio" name="sexo" value="feminino"> Feminino
     <label for="peso">Peso (kg):</label>
     <input type="number" id="peso" placeholder="Digite o peso">
     <label for="altura">Altura (m):</label>
@@ -62,19 +64,46 @@
 
   <script>
     function calcularIMC() {
-      const sexo = document.getElementById('sexo').value;
-      const peso = parseFloat(document.getElementById('peso').value);
-      const altura = parseFloat(document.getElementById('altura').value);
+      const sexo = document.querySelector('input[name="sexo"]:checked').value;
+      const peso = parseFloat(document.getElementById('peso').value.replace(',', '.'));
+      const altura = parseFloat(document.getElementById('altura').value.replace(',', '.'));
 
       if (!isNaN(peso) && !isNaN(altura) && altura > 0) {
         let imc = peso / (altura * altura);
 
         let mensagem = '';
+        let situacao = '';
 
         if (sexo === 'masculino') {
-          mensagem = `Seu IMC masculino é: ${imc.toFixed(2)}`;
+          if (imc < 18.5) {
+            situacao = 'Abaixo do peso';
+          } else if (imc >= 18.5 && imc < 25) {
+            situacao = 'Peso normal';
+          } else if (imc >= 25 && imc < 30) {
+            situacao = 'Sobrepeso';
+          } else if (imc >= 30 && imc < 35) {
+            situacao = 'Obesidade grau 1';
+          } else if (imc >= 35 && imc < 40) {
+            situacao = 'Obesidade grau 2';
+          } else {
+            situacao = 'Obesidade grau 3';
+          }
+          mensagem = `Seu IMC masculino é: ${imc.toFixed(2)} (${situacao})`;
         } else if (sexo === 'feminino') {
-          mensagem = `Seu IMC feminino é: ${imc.toFixed(2)}`;
+          if (imc < 18.5) {
+            situacao = 'Abaixo do peso';
+          } else if (imc >= 18.5 && imc < 25) {
+            situacao = 'Peso normal';
+          } else if (imc >= 25 && imc < 30) {
+            situacao = 'Sobrepeso';
+          } else if (imc >= 30 && imc < 35) {
+            situacao = 'Obesidade grau 1';
+          } else if (imc >= 35 && imc < 40) {
+            situacao = 'Obesidade grau 2';
+          } else {
+            situacao = 'Obesidade grau 3';
+          }
+          mensagem = `Seu IMC feminino é: ${imc.toFixed(2)} (${situacao})`;
         } else {
           mensagem = 'Selecione um sexo válido.';
         }
@@ -87,3 +116,4 @@
   </script>
 </body>
 </html>
+
